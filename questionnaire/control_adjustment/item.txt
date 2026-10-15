@@ -1,0 +1,13 @@
+Question ID: control_adjustment
+Source column: v14_kontrolle_anpassung
+
+German wording as administered (final questionnaire version, wording of 2026-09-23):
+Ich hatte die Kontrolle darüber, die Empfehlungen an meine Wünsche anzupassen.
+
+English translation (as reported in the paper):
+I was in control of adapting the recommendations to my wishes.
+
+Source framework: CRS-Que
+Source item: CRS-Que, Table 4, User Control, item 3
+Adaptation: German translation adapted to job search; harmonized 7-point scale.
+Reference: https://doi.org/10.1145/3631534

@@ -1,0 +1,13 @@
+Question ID: usefulness_find_easy
+Source column: v14_nutzen_einfacher_finden
+
+German wording as administered (final questionnaire version, wording of 2026-09-23):
+Mit dem System war es einfach, meine Suche einzugrenzen und relevante Stellen zu sichten.
+
+English translation (as reported in the paper):
+With the system, it was easy to narrow down my search and review relevant positions.
+
+Source framework: ResQue
+Source item: ResQue, Table 2, Perceived Usefulness, item 2
+Adaptation: German translation adapted to job search; harmonized 7-point scale. The wording refers to the available offers in order to separate the assessment of the advice from the size of the job corpus; it is therefore not a verbatim translation of the original item.
+Reference: https://doi.org/10.1145/2043932.2043962

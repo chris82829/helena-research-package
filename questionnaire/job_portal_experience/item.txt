@@ -1,0 +1,13 @@
+Question ID: job_portal_experience
+Source column: v14_jobportal_vorerfahrung
+
+German wording as administered (final questionnaire version, wording of 2026-09-23):
+Wie häufig hast du in den letzten sechs Monaten Online-Jobportale genutzt?
+
+English translation (as reported in the paper):
+How often have you used online job portals in the past six months?
+
+Source framework: Own development
+Source item: Context question, not a framework item
+Adaptation: Not applicable.
+Reference: 
