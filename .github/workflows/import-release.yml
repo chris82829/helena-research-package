@@ -1,0 +1,40 @@
+name: Import reviewed HELENA release
+on:
+  push:
+    paths: ['.github/workflows/import-release.yml']
+permissions:
+  contents: write
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          repository: chris82829/helena-reproducibility
+          ref: 4aef61c4d29737ff32772eed5b46470ae22a461b
+          path: source
+          persist-credentials: false
+      - name: Copy reviewed files
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import shutil,hashlib
+          for name in ['participants','questionnaire','analysis','system']:
+              shutil.copytree(Path('source')/name,name)
+          shutil.copyfile('source/README.md','README.md')
+          for original in Path('source').rglob('*'):
+              rel=original.relative_to('source')
+              if not original.is_file() or rel.parts[0] not in ['participants','questionnaire','analysis','system','README.md']:
+                  continue
+              assert hashlib.sha256(original.read_bytes()).digest()==hashlib.sha256(Path(rel).read_bytes()).digest()
+          assert len(list(Path('participants').glob('*/condition/answer.txt')))==347
+          assert len(list(Path('participants').glob('*/*/answer.txt')))==8328
+          shutil.rmtree('source')
+          PY
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add participants questionnaire analysis system README.md
+          git rm .github/workflows/import-release.yml
+          git commit -m "Add verified HELENA research materials"
+          git push
